@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SolutionRoot CoveredStatements="110" TotalStatements="110" CoveragePercent="100" ReportType="Xml" DotCoverVersion="2021.2.1">
+  <SolutionFolder Name="Tests" CoveredStatements="49" TotalStatements="49" CoveragePercent="100">
+    <Project Name="Tests" CoveredStatements="49" TotalStatements="49" CoveragePercent="100">
+      <Namespace Name="Tests" CoveredStatements="49" TotalStatements="49" CoveragePercent="100">
+        <Type Name="CalculatorTester" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
+          <Method Name="CalculateWithValidInputWithoutDivisionByZeroTest(int,Operation,int,int):void" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
+        </Type>
+        <Type Name="InputParserTester" CoveredStatements="30" TotalStatements="30" CoveragePercent="100">
+          <Method Name="AllIsCorrect():void" CoveredStatements="6" TotalStatements="6" CoveragePercent="100" />
+          <Method Name="AreNotValidArgs():void" CoveredStatements="4" TotalStatements="4" CoveragePercent="100" />
+          <Method Name="ArgsCountIsNotValid():void" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
+          <Method Name="Check(string[],int):void" CoveredStatements="4" TotalStatements="4" CoveragePercent="100" />
+          <Method Name="Check(string[],int,int,Operation,int):void" CoveredStatements="7" TotalStatements="7" CoveragePercent="100" />
+          <Method Name="DivisionByZeroError():void" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
+          <Method Name="IsNotValidOperationTest():void" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
+        </Type>
+        <Type Name="ProgramTester" CoveredStatements="16" TotalStatements="16" CoveragePercent="100">
+          <Method Name="IsNotValidArgs(bool,string[]):void" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
+          <Method Name="RightTestData():IEnumerable&lt;object[]&gt;" CoveredStatements="5" TotalStatements="5" CoveragePercent="100">
+            <InternalCompiledMethod Name="MoveNext():bool" CoveredStatements="5" TotalStatements="5" CoveragePercent="100" />
+          </Method>
+          <Method Name="ValidArgs(bool,string[]):void" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
+          <Method Name="WrongTestData():IEnumerable&lt;object[]&gt;" CoveredStatements="5" TotalStatements="5" CoveragePercent="100">
+            <InternalCompiledMethod Name="MoveNext():bool" CoveredStatements="5" TotalStatements="5" CoveragePercent="100" />
+          </Method>
+        </Type>
+      </Namespace>
+    </Project>
+  </SolutionFolder>
+  <Project Name="HW1.Calculator" CoveredStatements="61" TotalStatements="61" CoveragePercent="100">
+    <Namespace Name="HW1.Calculator" CoveredStatements="61" TotalStatements="61" CoveragePercent="100">
+      <Type Name="Calculator" CoveredStatements="8" TotalStatements="8" CoveragePercent="100">
+        <Method Name="Calculate(int,Operation,int):int" CoveredStatements="8" TotalStatements="8" CoveragePercent="100" />
+      </Type>
+      <Type Name="InputParser" CoveredStatements="45" TotalStatements="45" CoveragePercent="100">
+        <Constructor Name="InputParser()" CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+        <Method Name="CheckArgsCount(string[]):bool" CoveredStatements="6" TotalStatements="6" CoveragePercent="100" />
+        <Method Name="TryParseArguments(string[],out int,out Calculator.Operation,out int):int" CoveredStatements="16" TotalStatements="16" CoveragePercent="100" />
+        <Method Name="TryParseOperation(string,out Calculator.Operation):bool" CoveredStatements="16" TotalStatements="16" CoveragePercent="100">
+          <OwnCoverage CoveredStatements="15" TotalStatements="15" CoveragePercent="100" />
+          <AnonymousMethod Name="(string,string):string" CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+        </Method>
+        <Method Name="TryParseValue(string,out int):bool" CoveredStatements="6" TotalStatements="6" CoveragePercent="100" />
+      </Type>
+      <Type Name="Program" CoveredStatements="8" TotalStatements="8" CoveragePercent="100">
+        <Method Name="Main(string[]):int" CoveredStatements="8" TotalStatements="8" CoveragePercent="100" />
+      </Type>
+    </Namespace>
+  </Project>
+</SolutionRoot>
