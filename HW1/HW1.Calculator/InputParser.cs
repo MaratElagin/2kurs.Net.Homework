@@ -11,7 +11,6 @@ namespace HW1.Calculator
         public const int WrongOperation = 2;
         public const int WrongArgsCount = 3;
         public const int DivideByZero = 4;
-        private static readonly string[] SupportedOperations = {"+", "-", "*", "/"};
 
         public static int TryParseArguments(string[] args, out int val1, out Operation operation, out int val2)
         {
@@ -42,24 +41,18 @@ namespace HW1.Calculator
 
         private static bool TryParseOperation(string op, out Operation operation)
         {
-            var numberOperation = op switch
+            operation = op switch
             {
-                "+" => 0,
-                "-" => 1,
-                "*" => 2,
-                "/" => 3,
-                _ => 4
+                "+" => Operation.Plus,
+                "-" => Operation.Minus,
+                "*" => Operation.Multiply,
+                "/" => Operation.Divide,
+                _ => Operation.IncorrectOperation
             };
-            if (numberOperation > 3)
-            {
-                Console.WriteLine($"Unsupported operation received: {op}"
-                                  + $" Supported operations are {SupportedOperations.Aggregate((c, n) => $"{c} {n}")}");
-                operation = default;
-                return false;
-            }
-
-            operation = (Operation) numberOperation;
-            return true;
+            var isOperation = operation is not Operation.IncorrectOperation;
+            if (!isOperation)
+                Console.WriteLine($"Unsupported operation received: {op}");
+            return isOperation;
         }
 
         private static bool TryParseValue(string arg, out int val)
