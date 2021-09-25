@@ -1,10 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW1.Calculator", "src/HW1.Calculator/HW1.Calculator.csproj", "{540D46BD-E16A-4CAA-BCD1-D7B410333437}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW1.Calculator", "HW1.Calculator/HW1.Calculator.csproj", "{540D46BD-E16A-4CAA-BCD1-D7B410333437}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C1E08D5A-D45E-4A2D-A082-F23C4F824CC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "src\Tests\Tests.csproj", "{706B90A4-81D8-44D5-96A8-75BA91FDE0BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{706B90A4-81D8-44D5-96A8-75BA91FDE0BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
