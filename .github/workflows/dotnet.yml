@@ -18,14 +18,14 @@ jobs:
           dotnet-version: 5.0.x
       - name: Restore dependencies
         run: dotnet restore
-        working-directory: .HW1
+        working-directory: .HW2
       - name: Build
         run: dotnet build --no-restore
-        working-directory: .HW1
+        working-directory: .HW2
       - name: Test
         run: dotnet test --no-build --verbosity normal
-        working-directory: .HW1
+        working-directory: .HW2
       - name: Codecov
         uses: codecov/codecov-action@v2.1.0
         with:
-          file: ./.github/workflows/HW1TestCoverageReport.xml
+          file: ./.github/workflows/HW2TestCoverageReport.xml
