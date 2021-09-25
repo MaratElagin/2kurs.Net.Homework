@@ -7,31 +7,21 @@ namespace Tests
     public class ProgramTester
     {
         [Theory]
-        [MemberData(nameof(WrongTestData))]
+        [InlineData(false, new string[] {"1", "5"})]
+        [InlineData(false, new string[] {"+", "10", "bug"})]
+        [InlineData(false, new string[] {"3", "/", "0"})]
         public void IsNotValidArgs(bool isValid, string[] args)
         {
             Assert.False(Main(args) == 0);
         }
 
-        public static IEnumerable<object[]> WrongTestData()
-        {
-            yield return new object[] {false, new string[] {"1", "5"}};
-            yield return new object[] {false, new string[] {"+", "10", "bug"}};
-            yield return new object[] {false, new string[] {"3", "/", "0"}};
-        }
-
         [Theory]
-        [MemberData(nameof(RightTestData))]
+        [InlineData(true, new string[] {"1", "+", "10"})]
+        [InlineData(true, new string[] {"3", "/", "1"})]
+        [InlineData(true, new string[] {"1", "*", "20"})]
         public void ValidArgs(bool isValid, string[] args)
         {
             Assert.True(Main(args) == 0);
-        }
-
-        public static IEnumerable<object[]> RightTestData()
-        {
-            yield return new object[] {true, new string[] {"1", "+", "10"}};
-            yield return new object[] {true, new string[] {"3", "/", "1"}};
-            yield return new object[] {true, new string[] {"1", "*", "20"}};
         }
     }
 }
