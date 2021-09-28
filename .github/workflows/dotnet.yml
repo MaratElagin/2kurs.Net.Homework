@@ -30,8 +30,8 @@ jobs:
         with:
           file: ./.github/workflows/HW1TestCoverageReport.xml
 
-    HW2:
-      runs-on: ubuntu-latest
+  HW2:
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
@@ -52,4 +52,3 @@ jobs:
         uses: codecov/codecov-action@v2.1.0
         with:
           file: ./.github/workflows/HW2TestCoverageReport.xml
-      
