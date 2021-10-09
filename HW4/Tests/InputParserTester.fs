@@ -11,9 +11,16 @@ let check(args:string[]) (expectedCode:ResultCodes)=
     let actualCode = InputParser.tryParseArguments args &val1 &operation &val2
     Assert.Equal(expectedCode, actualCode)
 
-[<Fact>]
-let ``WrongArgumentsCount``() =
-    let args = [|"1"; "+"; "123"; "="|]
+let wrongCount = [|
+    [|[|"x"; "/"; "10"; "="|]|]
+    [|[|"5"; "*"|]|]
+    [|[|"World"|]|]
+    [|[||]|]
+|]
+
+[<Theory>]
+[<MemberData(nameof(wrongCount))>]
+let ``WrongArgumentsCount``(args) =
     check args ResultCodes.WrongArgumentsCount
     
 let wrongArguments = [|

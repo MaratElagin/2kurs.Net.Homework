@@ -1,5 +1,4 @@
 module HW4.Program
-open ResultCodes
 
 [<EntryPoint>]
 let main argv =
