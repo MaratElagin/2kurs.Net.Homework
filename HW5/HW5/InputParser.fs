@@ -25,17 +25,16 @@ let parseValues (arg1: string, operation: Operation, arg2: string) =
     with
     | _ -> Error ErrorCode.WrongArguments
 
-//let checkDivisionByZero (arg1: decimal, operation: Operation, arg2: decimal) =
-//    try
-//        Ok(arg2 <> 0m && operation <> Operation.Divide)
-//    with
-//    | _ -> Error ErrorCode.DivideByZero
+let checkDivisionByZero (arg1: decimal, operation: Operation, arg2: decimal) =
+    match (operation, arg2) with
+    | (Operation.Divide, 0m) -> Error ErrorCode.DivideByZero
+    | _ -> Ok (arg1, operation, arg2)
 
 let parse (args: string []) =
     maybe {
         let! a = checkArgsCount args
         let! b = parseOperation a
         let! c = parseValues b
-        //let! d = checkDivisionByZero c
-        return c
+        let! d = checkDivisionByZero c
+        return d
     }
