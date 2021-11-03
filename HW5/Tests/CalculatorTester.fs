@@ -8,9 +8,13 @@ open HW5.Operation
 [<InlineData(25, 30, 55)>]
 [<InlineData(-50, -43, -93)>]
 [<InlineData(5, -7, -2)>]
+[<InlineData(10.0, 20.0, 30.0)>]
+[<InlineData(25.0, 30.0, 55.0)>]
+[<InlineData(-50.0, -43.0, -93.0)>]
+[<InlineData(5.0, -7.0, -2.0)>]
 let Calculate_Plus_WillReturnCorrectResult val1 val2 expected =
     let result = Calculator.calculate(val1,Operation.Plus,val2)
-    Assert.Equal(result, expected, 10)
+    Assert.Equal(result, expected)
     
 [<Theory>]
 [<InlineData(0.23, 0.23, 0)>]
@@ -19,7 +23,7 @@ let Calculate_Plus_WillReturnCorrectResult val1 val2 expected =
 [<InlineData(5.1, 5.11, -0.01)>]
 let Calculate_Minus_WillReturnCorrectResult val1 val2 expected = 
     let result = Calculator.calculate(val1,Operation.Minus,val2)
-    Assert.Equal(result, expected, 10)
+    Assert.Equal(result, expected)
     
 [<Theory>]
 [<InlineData(5.5, 2, 11)>]
@@ -28,7 +32,7 @@ let Calculate_Minus_WillReturnCorrectResult val1 val2 expected =
 [<InlineData(5.5, -7.2, -39.6)>]
 let Calculate_Multiply_WillReturnCorrectResult val1 val2 expected = 
     let result = Calculator.calculate(val1,Operation.Multiply,val2)
-    Assert.Equal(result, expected, 10)
+    Assert.Equal(result, expected)
 
 [<Theory>]
 [<InlineData(55, 2, 27.5)>]
@@ -38,4 +42,4 @@ let Calculate_Multiply_WillReturnCorrectResult val1 val2 expected =
 [<InlineData(7, 2, 3.5)>]
 let Calculate_Divide_WillReturnCorrectResult val1  val2 expected = 
     let result = Calculator.calculate(val1,Operation.Divide,val2)
-    Assert.Equal(result, expected, 10)
+    Assert.Equal(result, expected)
