@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿
+<?xml version="1.0" encoding="utf-8"?>
 <Root CoveredStatements="184" TotalStatements="184" CoveragePercent="100" ReportType="DetailedXml" DotCoverVersion="2021.2.1">
   <FileIndices>
     <File Index="16" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW9\HW9\obj\Debug\net5.0\HW9.RazorAssemblyInfo.cs" ChecksumAlgorithm="SHA256" Checksum="D5D30B6B5F2D02F2AAC82FD8F406069E06F46D48EA38C610DA0AFC399869DAAB" />
