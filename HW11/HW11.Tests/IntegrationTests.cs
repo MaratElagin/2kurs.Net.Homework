@@ -101,7 +101,7 @@ namespace HW11.Tests
         private async Task CalculatorController_CashedTest()
         {
             var rnd = new Random();
-            var operations = new char[] {'+', '-', '*', '/'};
+            var operations = new[] {'+', '-', '*', '/'};
             var randomOperation = operations[rnd.Next(0, 4)];
             var expression = $"{rnd.Next(0, int.MaxValue / 2)} {randomOperation} {rnd.Next(0, int.MaxValue / 2)}";
             var str = $"expression={expression}";
@@ -110,7 +110,7 @@ namespace HW11.Tests
 
             var timeBefore = await MeasureTime(stringContent);
             var timeAfter = await MeasureTime(stringContent);
-            Assert.True(timeBefore - timeAfter > 1000);
+            Assert.True(timeBefore - timeAfter > 900);
         }
 
         private async Task<long> MeasureTime(HttpContent stringContent)
