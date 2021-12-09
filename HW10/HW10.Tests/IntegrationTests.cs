@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -23,8 +24,17 @@ namespace HW10.Tests
                 .ConfigureWebHostDefaults(a => a
                     .UseStartup<Startup>()
                     .UseTestServer())
-                .ConfigureServices(a => a.AddDbContext<ApplicationContext>(options =>
-                    options.UseInMemoryDatabase("DBForTests")));
+                .ConfigureServices(services =>
+                {
+                    var descriptor = services.SingleOrDefault
+                        (d => d.ServiceType == typeof(DbContextOptions<ApplicationContext>));
+                    services.AddDbContext<ApplicationContext>
+                        ((_, context) => context.UseInMemoryDatabase("DbForTests"));
+                    var serviceProvider = services.BuildServiceProvider();
+                    using var scope = serviceProvider.CreateScope();
+                    var db = scope.ServiceProvider.GetRequiredService<ApplicationContext>();
+                    db.Database.EnsureCreated();
+                });
     }
 
     public class IntegrationCalculatorControllerTests : IClassFixture<HostBuilder>
