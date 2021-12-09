@@ -8,6 +8,7 @@
 
     <ItemGroup>
         <PackageReference Include="Kralizek.AutoFixture.Extensions.AspNetCore.WebApplicationFactory" Version="1.1.0" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.10" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.10">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

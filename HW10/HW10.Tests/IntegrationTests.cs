@@ -8,6 +8,7 @@ using HW10.Services.Database;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Xunit;
@@ -22,7 +23,8 @@ namespace HW10.Tests
                 .ConfigureWebHostDefaults(a => a
                     .UseStartup<Startup>()
                     .UseTestServer())
-                .ConfigureServices(a => a.AddDbContext<ApplicationContext>());
+                .ConfigureServices(a => a.AddDbContext<ApplicationContext>(options =>
+                    options.UseInMemoryDatabase("DBForTests")));
     }
 
     public class IntegrationCalculatorControllerTests : IClassFixture<HostBuilder>
