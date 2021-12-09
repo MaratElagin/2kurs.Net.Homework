@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using HW10.Services.Database;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
@@ -12,39 +13,55 @@ using Microsoft.AspNetCore.TestHost;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace HW10.Tests
 {
-    public class HostBuilder : WebApplicationFactory<Startup>
+    public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<TStartup> where TStartup : class
     {
-        protected override IHostBuilder CreateHostBuilder()
-            => Host
-                .CreateDefaultBuilder()
-                .ConfigureWebHostDefaults(a => a
-                    .UseStartup<Startup>()
-                    .UseTestServer())
-                .ConfigureServices(services =>
+        protected override void ConfigureWebHost(IWebHostBuilder builder)
+        {
+            builder.ConfigureServices(services =>
+            {
+                var descriptor = services.SingleOrDefault
+                    (d => d.ServiceType == typeof(DbContextOptions<ApplicationContext>));
+
+                if (descriptor != null)
                 {
-                    var descriptor = services.SingleOrDefault
-                        (d => d.ServiceType == typeof(DbContextOptions<ApplicationContext>));
-                    services.AddDbContext<ApplicationContext>
-                        ((_, context) => context.UseInMemoryDatabase("DbForTests"));
-                    var serviceProvider = services.BuildServiceProvider();
-                    using var scope = serviceProvider.CreateScope();
-                    var db = scope.ServiceProvider.GetRequiredService<ApplicationContext>();
-                    db.Database.EnsureCreated();
-                });
+                    services.Remove(descriptor);
+                }
+
+                // Add ApplicationDbContext using an in-memory database for testing.
+                services.AddDbContext<ApplicationContext>
+                    ((_, context) => context.UseInMemoryDatabase("InMemoryDbForTesting"));
+
+                // Build the service provider.
+                var serviceProvider = services.BuildServiceProvider();
+
+                // Create a scope to obtain a reference to the database
+                // context (ApplicationDbContext).
+                using var scope = serviceProvider.CreateScope();
+
+                var db = scope.ServiceProvider.GetRequiredService<ApplicationContext>();
+                var logger = scope.ServiceProvider.GetRequiredService
+                    <ILogger<CustomWebApplicationFactory<TStartup>>>();
+
+                // Ensure the database is created.
+                db.Database.EnsureCreated();
+            });
+        }
     }
 
-    public class IntegrationCalculatorControllerTests : IClassFixture<HostBuilder>
+    public class IntegrationCalculatorControllerTests : IClassFixture<CustomWebApplicationFactory<Startup>>
     {
         private readonly HttpClient _client;
         private readonly string _successString = "Result: ";
         private readonly string _errorString = "Error: ";
         private static readonly Uri Uri = new("https://localhost:5001/Calculator/Calculate");
 
-        public IntegrationCalculatorControllerTests(HostBuilder fixture)
+        public IntegrationCalculatorControllerTests(CustomWebApplicationFactory<Startup> fixture)
         {
             _client = fixture.CreateClient();
         }
