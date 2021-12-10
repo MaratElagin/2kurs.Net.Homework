@@ -1,0 +1,8 @@
+﻿@using WebApplicationLearn.MyHtmlServices
+@model UserProfile
+
+@using (Html.BeginForm())
+{
+        @Html.MyEditorForModel()
+        <button type="submit" class="btn btn-primary">Sign up</button>
+}
