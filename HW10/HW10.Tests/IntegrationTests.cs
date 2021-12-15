@@ -35,7 +35,7 @@ namespace HW10.Tests
 
                 // Add ApplicationDbContext using an in-memory database for testing.
                 services.AddDbContext<ApplicationContext>
-                    ((_, context) => context.UseInMemoryDatabase("InMemoryDbForTesting"));
+                    ((_, context) => context.UseInMemoryDatabase("DbForTests"));
 
                 // Build the service provider.
                 var serviceProvider = services.BuildServiceProvider();
@@ -114,7 +114,7 @@ namespace HW10.Tests
 
             var timeBefore = await MeasureTime(stringContent);
             var timeAfter = await MeasureTime(stringContent);
-            Assert.True(timeBefore - timeAfter > 500);
+            Assert.True(timeBefore - timeAfter > 100);
         }
 
         private async Task<long> MeasureTime(HttpContent stringContent)
