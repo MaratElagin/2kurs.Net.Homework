@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Root CoveredStatements="262" TotalStatements="266" CoveragePercent="98" ReportType="DetailedXml" DotCoverVersion="2021.2.1">
+<Root CoveredStatements="258" TotalStatements="262" CoveragePercent="98" ReportType="DetailedXml" DotCoverVersion="2021.2.1">
   <FileIndices>
     <File Index="1" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11.Tests\IntegrationTests.cs" ChecksumAlgorithm="SHA256" Checksum="56B21BFDFD907BA87B861B84AE0BD01C74E060B3A9F0ABEB8E0B478B303F552F" />
     <File Index="2" Name="C:\Users\User\.nuget\packages\microsoft.net.test.sdk\16.9.4\build\netcoreapp2.1\Microsoft.NET.Test.Sdk.Program.cs" ChecksumAlgorithm="SHA256" Checksum="D66F12F9433816A8C7DC1B2ACB9E1010F5418F5EEB51E80F1DF57AA1DCAB8D8A" />
@@ -33,8 +33,8 @@
     <File Index="30" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\obj\Debug\net5.0\HW11.AssemblyInfo.cs" ChecksumAlgorithm="SHA256" Checksum="747B6F7AF5DD322A7C22B15F2967EAC7B64E33B62E3A6611C2531334034267AC" />
     <File Index="31" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\obj\Debug\net5.0\HW11.RazorAssemblyInfo.cs" ChecksumAlgorithm="SHA256" Checksum="92720C3F663D6A1C9911083FADD4CAD58ABE7335CF80FC391729D71CBE5A9FE1" />
   </FileIndices>
-  <Assembly Name="HW11" CoveredStatements="203" TotalStatements="207" CoveragePercent="98">
-    <Namespace Name="HW11" CoveredStatements="29" TotalStatements="33" CoveragePercent="88">
+  <Assembly Name="HW11" CoveredStatements="199" TotalStatements="203" CoveragePercent="98">
+    <Namespace Name="HW11" CoveredStatements="25" TotalStatements="29" CoveragePercent="86">
       <Type Name="Program" CoveredStatements="4" TotalStatements="4" CoveragePercent="100">
         <Type Name="&lt;&gt;c" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
           <Method Name="&lt;CreateHostBuilder&gt;b__1_0(Microsoft.AspNetCore.Hosting.IWebHostBuilder):System.Void" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
@@ -47,7 +47,7 @@
           <Statement FileIndex="17" Line="20" Column="13" EndLine="21" EndColumn="95" Covered="True" />
         </Method>
       </Type>
-      <Type Name="Startup" CoveredStatements="25" TotalStatements="29" CoveragePercent="86">
+      <Type Name="Startup" CoveredStatements="21" TotalStatements="25" CoveragePercent="84">
         <Type Name="&lt;&gt;c" CoveredStatements="4" TotalStatements="4" CoveragePercent="100">
           <Method Name="&lt;Configure&gt;b__5_0(Microsoft.AspNetCore.Routing.IEndpointRouteBuilder):System.Void" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
             <Statement FileIndex="28" Line="56" Column="13" EndLine="56" EndColumn="14" Covered="True" />
@@ -58,12 +58,6 @@
             <Statement FileIndex="28" Line="29" Column="17" EndLine="29" EndColumn="91" Covered="True" />
           </Method>
         </Type>
-        <Method Name=".ctor(Microsoft.Extensions.Configuration.IConfiguration):System.Void" CoveredStatements="4" TotalStatements="4" CoveragePercent="100">
-          <Statement FileIndex="28" Line="16" Column="9" EndLine="16" EndColumn="53" Covered="True" />
-          <Statement FileIndex="28" Line="17" Column="9" EndLine="17" EndColumn="10" Covered="True" />
-          <Statement FileIndex="28" Line="18" Column="13" EndLine="18" EndColumn="43" Covered="True" />
-          <Statement FileIndex="28" Line="19" Column="9" EndLine="19" EndColumn="10" Covered="True" />
-        </Method>
         <Method Name="Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment):System.Void" CoveredStatements="11" TotalStatements="15" CoveragePercent="73">
           <Statement FileIndex="28" Line="36" Column="9" EndLine="36" EndColumn="10" Covered="True" />
           <Statement FileIndex="28" Line="37" Column="13" EndLine="37" EndColumn="37" Covered="True" />
