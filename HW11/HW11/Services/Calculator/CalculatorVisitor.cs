@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace HW11.Services.Calculator
 {
-    public class CalculatorVisitor : ExpressionVisitor
+    public class CalculatorVisitor
     {
         public double VisitDynamic(Expression expression)
         {

@@ -110,7 +110,7 @@ namespace HW11.Tests
 
             var timeBefore = await MeasureTime(stringContent);
             var timeAfter = await MeasureTime(stringContent);
-            Assert.True(timeBefore - timeAfter > 900);
+            Assert.True(timeBefore - timeAfter > 100);
         }
 
         private async Task<long> MeasureTime(HttpContent stringContent)
