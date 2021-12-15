@@ -1,39 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Root CoveredStatements="250" TotalStatements="254" CoveragePercent="98" ReportType="DetailedXml" DotCoverVersion="2021.2.1">
+<Root CoveredStatements="261" TotalStatements="265" CoveragePercent="98" ReportType="DetailedXml" DotCoverVersion="2021.2.1">
   <FileIndices>
     <File Index="1" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11.Tests\obj\Debug\net5.0\HW11.Tests.AssemblyInfo.cs" ChecksumAlgorithm="SHA256" Checksum="936A88F649863F24C445A1CE3BAEF2DAA4198EB8D4C1981ADEAEA50227A1F589" />
     <File Index="2" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11.Tests\obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" ChecksumAlgorithm="SHA256" Checksum="3DAB221DDB7A8D7D050731DC8D289DF26D56F7DABEB91B3D7F96E5CB6C994C29" />
     <File Index="3" Name="C:\Users\User\.nuget\packages\microsoft.net.test.sdk\16.9.4\build\netcoreapp2.1\Microsoft.NET.Test.Sdk.Program.cs" ChecksumAlgorithm="SHA256" Checksum="D66F12F9433816A8C7DC1B2ACB9E1010F5418F5EEB51E80F1DF57AA1DCAB8D8A" />
-    <File Index="4" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11.Tests\IntegrationTests.cs" ChecksumAlgorithm="SHA256" Checksum="0F4CEAD6807E242AD6E84963932AC0D809969629DCE88BBB64A9F4D36834EC37" />
-    <File Index="5" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Controllers\CalculatorController.cs" ChecksumAlgorithm="SHA256" Checksum="C59A1989C1777B92BB08676382E8EB40EF703A20318FEE78E6C53081320123E2" />
-    <File Index="6" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Controllers\HomeController.cs" ChecksumAlgorithm="SHA256" Checksum="98379EE7918CBB60894119F1E7994E89731F4DA7AE22F2A8A73EFA9FCEC19086" />
-    <File Index="7" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Exceptions\ExceptionHandler.cs" ChecksumAlgorithm="SHA256" Checksum="86D422F872E03FBEE480B8114E8E6D31CB813B2528D1F1EB92B534E308B37223" />
-    <File Index="8" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Exceptions\IExceptionHandler.cs" ChecksumAlgorithm="SHA256" Checksum="75790DAC85DD161FB0B5E9BC2971FA58556E557FF10B58AD0D940F6E8199FB7B" />
-    <File Index="9" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Exceptions\InvalidCharacterException.cs" ChecksumAlgorithm="SHA256" Checksum="B05252FE9B8E477219C811FB22A56E5BFE8A2ECEE520DFBBD36D3809396872E9" />
-    <File Index="10" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Exceptions\InvalidNumberException.cs" ChecksumAlgorithm="SHA256" Checksum="9F73329DFD34E91247BF4BC2F2383CCF47C86E3E2BD0E220F221264983DA1673" />
-    <File Index="11" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Exceptions\InvalidSyntaxException.cs" ChecksumAlgorithm="SHA256" Checksum="D56D611132418D37167FC7D87E84F37FCDCB71A35770C890670C33B4DBBC4D3D" />
-    <File Index="12" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Migrations\20211208130308_2021_12_8_AddModels.cs" ChecksumAlgorithm="SHA256" Checksum="ACEE56119D2A837B31565410A6B57002943543C249CF1B64B4532DFAFDD30F88" />
-    <File Index="13" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Migrations\20211208130308_2021_12_8_AddModels.Designer.cs" ChecksumAlgorithm="SHA256" Checksum="7019D0F89FCC01641E3F5F65485C56C02D5F68C600A5B9732823D8393FFF0B67" />
-    <File Index="14" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Migrations\ApplicationContextModelSnapshot.cs" ChecksumAlgorithm="SHA256" Checksum="E53808A812509D3909364A7761A44D613963007D623DC592D9DA2196511FB850" />
-    <File Index="15" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Models\AnswerModel.cs" ChecksumAlgorithm="SHA256" Checksum="F30C1EB8AEB0350787CC619B8894638E743F54954BFA7C4BC137BCD7A8BAC4F5" />
-    <File Index="16" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Models\ErrorViewModel.cs" ChecksumAlgorithm="SHA256" Checksum="A89E8B6F5D6116E3727BDDFB08B1421BD9CF16CAF3496ADE02773100612D56B6" />
-    <File Index="17" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Program.cs" ChecksumAlgorithm="SHA256" Checksum="F9D02E5147444F87562EBBC7577670B164C233635EC8E09D8BCF7AF7DECEA52A" />
-    <File Index="18" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Services\Calculator\CalculationAnswer.cs" ChecksumAlgorithm="SHA256" Checksum="E128A5599AB5EF5BEF19F568F6FDFF72AA60A85C9F9F0B03CAE038CB427B8052" />
-    <File Index="19" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Services\Calculator\Calculator.cs" ChecksumAlgorithm="SHA256" Checksum="9EBD70A9248358DAD5A224DAF5900F022FC38FD2FB3DBD3AF00DBAB214909C6F" />
-    <File Index="20" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Services\Calculator\CalculatorVisitor.cs" ChecksumAlgorithm="SHA256" Checksum="C7006879DE5FA912D207035FB748257308224AF9B8FCEAE6DB981861EEF480BD" />
-    <File Index="21" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Services\Calculator\ExpressionValidator.cs" ChecksumAlgorithm="SHA256" Checksum="960E4CCB04A0A72E3BB766CB2C05A9B647924F40C94B2E87D00DE7279B6C711E" />
-    <File Index="22" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Services\Calculator\ICalculator.cs" ChecksumAlgorithm="SHA256" Checksum="1BA7C1C81106BF36A3131C98CFD7A5B452F76ED9AF71F71E7141B1A1FF4A3143" />
-    <File Index="23" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Services\Calculator\MathExpressionParser.cs" ChecksumAlgorithm="SHA256" Checksum="45C3108A3F6E5C9DFDC0FCB9D80A74FCB503B8E6E7830910F97619B766D65094" />
-    <File Index="24" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Services\Calculator\Token.cs" ChecksumAlgorithm="SHA256" Checksum="A1A04D6949F7FC33D6E969D16F7CF8EA660242988F9D40D7C639F27592F3A20A" />
-    <File Index="25" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Services\CashedCalculator\CashedCalculator.cs" ChecksumAlgorithm="SHA256" Checksum="B5D4B1C5A84D55381DDC9C9C1D14E07A36A49DD528CF21AFBCB6B5292D4F2497" />
-    <File Index="26" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Services\Database\ApplicationContext.cs" ChecksumAlgorithm="SHA256" Checksum="4C77B24F8150F17B0DAF51BA02C0140FC075F6295779B1DE446611CF38720ED8" />
-    <File Index="27" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Services\Database\Models\CalculatingExpression.cs" ChecksumAlgorithm="SHA256" Checksum="F74B0C35636ACA12DE418B07123CE57310690A631EC649E86679CE96072B1786" />
-    <File Index="28" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Startup.cs" ChecksumAlgorithm="SHA256" Checksum="DEA44CBA63B530D7DD2F2FD0FA5AA3197F3B5204C9EDC99DF2AF2CE639C9B85C" />
-    <File Index="29" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" ChecksumAlgorithm="SHA256" Checksum="3DAB221DDB7A8D7D050731DC8D289DF26D56F7DABEB91B3D7F96E5CB6C994C29" />
-    <File Index="30" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\obj\Debug\net5.0\HW11.AssemblyInfo.cs" ChecksumAlgorithm="SHA256" Checksum="747B6F7AF5DD322A7C22B15F2967EAC7B64E33B62E3A6611C2531334034267AC" />
+    <File Index="4" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11.Tests\IntegrationTests.cs" ChecksumAlgorithm="SHA256" Checksum="56B21BFDFD907BA87B861B84AE0BD01C74E060B3A9F0ABEB8E0B478B303F552F" />
     <File Index="31" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\obj\Debug\net5.0\HW11.RazorAssemblyInfo.cs" ChecksumAlgorithm="SHA256" Checksum="92720C3F663D6A1C9911083FADD4CAD58ABE7335CF80FC391729D71CBE5A9FE1" />
+    <File Index="30" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\obj\Debug\net5.0\HW11.AssemblyInfo.cs" ChecksumAlgorithm="SHA256" Checksum="747B6F7AF5DD322A7C22B15F2967EAC7B64E33B62E3A6611C2531334034267AC" />
+    <File Index="29" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" ChecksumAlgorithm="SHA256" Checksum="3DAB221DDB7A8D7D050731DC8D289DF26D56F7DABEB91B3D7F96E5CB6C994C29" />
+    <File Index="28" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Startup.cs" ChecksumAlgorithm="SHA256" Checksum="DEA44CBA63B530D7DD2F2FD0FA5AA3197F3B5204C9EDC99DF2AF2CE639C9B85C" />
+    <File Index="27" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Services\Database\Models\CalculatingExpression.cs" ChecksumAlgorithm="SHA256" Checksum="F74B0C35636ACA12DE418B07123CE57310690A631EC649E86679CE96072B1786" />
+    <File Index="26" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Services\Database\ApplicationContext.cs" ChecksumAlgorithm="SHA256" Checksum="4C77B24F8150F17B0DAF51BA02C0140FC075F6295779B1DE446611CF38720ED8" />
+    <File Index="25" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Services\CashedCalculator\CashedCalculator.cs" ChecksumAlgorithm="SHA256" Checksum="B5D4B1C5A84D55381DDC9C9C1D14E07A36A49DD528CF21AFBCB6B5292D4F2497" />
+    <File Index="24" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Services\Calculator\Token.cs" ChecksumAlgorithm="SHA256" Checksum="A1A04D6949F7FC33D6E969D16F7CF8EA660242988F9D40D7C639F27592F3A20A" />
+    <File Index="23" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Services\Calculator\MathExpressionParser.cs" ChecksumAlgorithm="SHA256" Checksum="45C3108A3F6E5C9DFDC0FCB9D80A74FCB503B8E6E7830910F97619B766D65094" />
+    <File Index="22" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Services\Calculator\ICalculator.cs" ChecksumAlgorithm="SHA256" Checksum="1BA7C1C81106BF36A3131C98CFD7A5B452F76ED9AF71F71E7141B1A1FF4A3143" />
+    <File Index="21" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Services\Calculator\ExpressionValidator.cs" ChecksumAlgorithm="SHA256" Checksum="960E4CCB04A0A72E3BB766CB2C05A9B647924F40C94B2E87D00DE7279B6C711E" />
+    <File Index="20" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Services\Calculator\CalculatorVisitor.cs" ChecksumAlgorithm="SHA256" Checksum="15C09C6262F5BE35117D6D68A8C264A9ED707907B06FFE9AD8D5A218A8E4E883" />
+    <File Index="19" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Services\Calculator\Calculator.cs" ChecksumAlgorithm="SHA256" Checksum="9EBD70A9248358DAD5A224DAF5900F022FC38FD2FB3DBD3AF00DBAB214909C6F" />
+    <File Index="18" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Services\Calculator\CalculationAnswer.cs" ChecksumAlgorithm="SHA256" Checksum="E128A5599AB5EF5BEF19F568F6FDFF72AA60A85C9F9F0B03CAE038CB427B8052" />
+    <File Index="17" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Program.cs" ChecksumAlgorithm="SHA256" Checksum="F9D02E5147444F87562EBBC7577670B164C233635EC8E09D8BCF7AF7DECEA52A" />
+    <File Index="16" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Models\ErrorViewModel.cs" ChecksumAlgorithm="SHA256" Checksum="A89E8B6F5D6116E3727BDDFB08B1421BD9CF16CAF3496ADE02773100612D56B6" />
+    <File Index="15" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Models\AnswerModel.cs" ChecksumAlgorithm="SHA256" Checksum="F30C1EB8AEB0350787CC619B8894638E743F54954BFA7C4BC137BCD7A8BAC4F5" />
+    <File Index="14" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Migrations\ApplicationContextModelSnapshot.cs" ChecksumAlgorithm="SHA256" Checksum="E53808A812509D3909364A7761A44D613963007D623DC592D9DA2196511FB850" />
+    <File Index="13" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Migrations\20211208130308_2021_12_8_AddModels.Designer.cs" ChecksumAlgorithm="SHA256" Checksum="7019D0F89FCC01641E3F5F65485C56C02D5F68C600A5B9732823D8393FFF0B67" />
+    <File Index="12" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Migrations\20211208130308_2021_12_8_AddModels.cs" ChecksumAlgorithm="SHA256" Checksum="ACEE56119D2A837B31565410A6B57002943543C249CF1B64B4532DFAFDD30F88" />
+    <File Index="11" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Exceptions\InvalidSyntaxException.cs" ChecksumAlgorithm="SHA256" Checksum="D56D611132418D37167FC7D87E84F37FCDCB71A35770C890670C33B4DBBC4D3D" />
+    <File Index="10" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Exceptions\InvalidNumberException.cs" ChecksumAlgorithm="SHA256" Checksum="9F73329DFD34E91247BF4BC2F2383CCF47C86E3E2BD0E220F221264983DA1673" />
+    <File Index="9" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Exceptions\InvalidCharacterException.cs" ChecksumAlgorithm="SHA256" Checksum="B05252FE9B8E477219C811FB22A56E5BFE8A2ECEE520DFBBD36D3809396872E9" />
+    <File Index="8" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Exceptions\IExceptionHandler.cs" ChecksumAlgorithm="SHA256" Checksum="75790DAC85DD161FB0B5E9BC2971FA58556E557FF10B58AD0D940F6E8199FB7B" />
+    <File Index="7" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Exceptions\ExceptionHandler.cs" ChecksumAlgorithm="SHA256" Checksum="86D422F872E03FBEE480B8114E8E6D31CB813B2528D1F1EB92B534E308B37223" />
+    <File Index="6" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Controllers\HomeController.cs" ChecksumAlgorithm="SHA256" Checksum="98379EE7918CBB60894119F1E7994E89731F4DA7AE22F2A8A73EFA9FCEC19086" />
+    <File Index="5" Name="D:\Marat\Study\Repository\2kurs.Net.Homework\HW11\HW11\Controllers\CalculatorController.cs" ChecksumAlgorithm="SHA256" Checksum="C59A1989C1777B92BB08676382E8EB40EF703A20318FEE78E6C53081320123E2" />
   </FileIndices>
-  <Assembly Name="HW11" CoveredStatements="203" TotalStatements="207" CoveragePercent="98">
+  <Assembly Name="HW11" CoveredStatements="202" TotalStatements="206" CoveragePercent="98">
     <Namespace Name="HW11" CoveredStatements="29" TotalStatements="33" CoveragePercent="88">
       <Type Name="Program" CoveredStatements="4" TotalStatements="4" CoveragePercent="100">
         <Type Name="&lt;&gt;c" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
@@ -360,13 +360,10 @@
         </Method>
       </Type>
     </Namespace>
-    <Namespace Name="HW11.Services.Database.Models" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
-      <Type Name="CalculatingExpression" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
+    <Namespace Name="HW11.Services.Database.Models" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+      <Type Name="CalculatingExpression" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
         <Method Name="get_Result():System.String" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
           <Statement FileIndex="27" Line="14" Column="32" EndLine="14" EndColumn="36" Covered="True" />
-        </Method>
-        <Method Name="set_Expression(System.String):System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
-          <Statement FileIndex="27" Line="11" Column="41" EndLine="11" EndColumn="45" Covered="True" />
         </Method>
         <Method Name="set_Result(System.String):System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
           <Statement FileIndex="27" Line="14" Column="37" EndLine="14" EndColumn="41" Covered="True" />
@@ -374,8 +371,8 @@
       </Type>
     </Namespace>
   </Assembly>
-  <Assembly Name="HW11.Tests" CoveredStatements="47" TotalStatements="47" CoveragePercent="100">
-    <Namespace Name="HW11.Tests" CoveredStatements="47" TotalStatements="47" CoveragePercent="100">
+  <Assembly Name="HW11.Tests" CoveredStatements="59" TotalStatements="59" CoveragePercent="100">
+    <Namespace Name="HW11.Tests" CoveredStatements="59" TotalStatements="59" CoveragePercent="100">
       <Type Name="CustomWebApplicationFactory&lt;TStartup&gt;" CoveredStatements="19" TotalStatements="19" CoveragePercent="100">
         <Type Name="&lt;&gt;c" CoveredStatements="16" TotalStatements="16" CoveragePercent="100">
           <Method Name="&lt;ConfigureWebHost&gt;b__0_0(Microsoft.Extensions.DependencyInjection.IServiceCollection):System.Void" CoveredStatements="14" TotalStatements="14" CoveragePercent="100">
@@ -407,7 +404,7 @@
           <Statement FileIndex="4" Line="50" Column="9" EndLine="50" EndColumn="10" Covered="True" />
         </Method>
       </Type>
-      <Type Name="IntegrationCalculatorControllerTests" CoveredStatements="28" TotalStatements="28" CoveragePercent="100">
+      <Type Name="IntegrationCalculatorControllerTests" CoveredStatements="40" TotalStatements="40" CoveragePercent="100">
         <Type Name="&lt;Calculate_CalculateExpression_Error&gt;d__6" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
           <Method Name="MoveNext():System.Void" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
             <Statement FileIndex="4" Line="86" Column="9" EndLine="86" EndColumn="10" Covered="True" />
@@ -420,6 +417,22 @@
             <Statement FileIndex="4" Line="72" Column="9" EndLine="72" EndColumn="10" Covered="True" />
             <Statement FileIndex="4" Line="73" Column="13" EndLine="73" EndColumn="64" Covered="True" />
             <Statement FileIndex="4" Line="74" Column="9" EndLine="74" EndColumn="10" Covered="True" />
+          </Method>
+        </Type>
+        <Type Name="&lt;CalculatorController_CashedTest&gt;d__8" CoveredStatements="12" TotalStatements="12" CoveragePercent="100">
+          <Method Name="MoveNext():System.Void" CoveredStatements="12" TotalStatements="12" CoveragePercent="100">
+            <Statement FileIndex="4" Line="102" Column="9" EndLine="102" EndColumn="10" Covered="True" />
+            <Statement FileIndex="4" Line="103" Column="13" EndLine="103" EndColumn="36" Covered="True" />
+            <Statement FileIndex="4" Line="104" Column="13" EndLine="104" EndColumn="57" Covered="True" />
+            <Statement FileIndex="4" Line="105" Column="13" EndLine="105" EndColumn="62" Covered="True" />
+            <Statement FileIndex="4" Line="106" Column="13" EndLine="106" EndColumn="115" Covered="True" />
+            <Statement FileIndex="4" Line="107" Column="13" EndLine="107" EndColumn="50" Covered="True" />
+            <Statement FileIndex="4" Line="108" Column="13" EndLine="108" EndColumn="71" Covered="True" />
+            <Statement FileIndex="4" Line="109" Column="13" EndLine="109" EndColumn="111" Covered="True" />
+            <Statement FileIndex="4" Line="111" Column="13" EndLine="111" EndColumn="63" Covered="True" />
+            <Statement FileIndex="4" Line="112" Column="13" EndLine="112" EndColumn="62" Covered="True" />
+            <Statement FileIndex="4" Line="113" Column="13" EndLine="113" EndColumn="55" Covered="True" />
+            <Statement FileIndex="4" Line="114" Column="9" EndLine="114" EndColumn="10" Covered="True" />
           </Method>
         </Type>
         <Type Name="&lt;MakeTest&gt;d__7" CoveredStatements="7" TotalStatements="7" CoveragePercent="100">
