@@ -21,6 +21,7 @@ namespace HW8
         {
             services.AddControllersWithViews();
             services.AddSingleton<ICalculator, Calculator.Calculator>();
+            services.AddMiniProfiler();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,7 +42,7 @@ namespace HW8
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseMiniProfiler();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
