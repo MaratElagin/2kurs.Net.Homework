@@ -37,13 +37,12 @@ namespace HW8
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-            
-            app.UseMiniProfiler();
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseMiniProfiler();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

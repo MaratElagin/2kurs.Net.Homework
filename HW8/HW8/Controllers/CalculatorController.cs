@@ -20,8 +20,8 @@ namespace HW8.Controllers
 
             var isOperation = Enum.TryParse<Operation>(operation, true, out var op);
             if (!isOperation)
-                return View(new Calculation($"{operation} - недопустимая операция. Допустимые: plus, minus, multiply или divide"));
-
+                return View(new Calculation( $"{operation} - недопустимая операция. Допустимые: plus, minus, multiply или divide"));
+            
             var result = op switch
             {
                 Operation.Plus => calculator.Plus(v1, v2),
