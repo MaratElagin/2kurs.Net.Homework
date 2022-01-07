@@ -1,10 +1,7 @@
-using HW11.Exceptions;
 using HW11.Services.Calculator;
 using HW11.Services.CashedCalculator;
-using HW11.Services.Database;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,12 +20,8 @@ namespace HW11
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationContext>(options =>
-                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddScoped<ICalculator>(s =>
-                new CashedCalculator(new Calculator(), s.GetService<ApplicationContext>()));
             services.AddControllersWithViews();
-            services.AddScoped<IExceptionHandler, ExceptionHandler>();
+            services.AddScoped<ICalculator>(c => new CashedCalculator(new Calculator()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

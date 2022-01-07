@@ -27,13 +27,17 @@ namespace HW11.Services.Calculator
             {"/", ExpressionType.Divide}
         };
 
-        public string Calculate(string expression)
+        public CalculationAnswer<string, string> Calculate(string expression)
         {
             var tokens = _parser.ParseToTokens(expression);
-            _expValidator.CheckExpressionCorrect(tokens);
-            var convertedExpression = ConvertStringToExpression(tokens);
-            var resultExpression = _calcVisitor.VisitDynamic(convertedExpression);
-            return resultExpression.ToString(CultureInfo.InvariantCulture);
+            if (tokens.Type == TypeAnswer.Error)
+                return new CalculationAnswer<string, string>(error: tokens.Error);
+            if (!_expValidator.IsCorrectExpression(tokens.Success, out var errorMessage))
+                return new CalculationAnswer<string, string>(error: errorMessage);
+            var convertedExpression = ConvertStringToExpression(tokens.Success);
+            var resultExpression = _calcVisitor.Visit(convertedExpression);
+            var result = (double) ((ConstantExpression) resultExpression).Value;
+            return new CalculationAnswer<string, string>(success: result.ToString(CultureInfo.InvariantCulture));
         }
 
         private Expression ConvertStringToExpression(IEnumerable<Token> tokens)
@@ -66,7 +70,7 @@ namespace HW11.Services.Calculator
 
                 lastToken = currentToken;
             }
-                               
+
             CalculateLastOperation(outputStack, tokenStack);
             return outputStack.Pop();
         }
@@ -80,7 +84,7 @@ namespace HW11.Services.Calculator
                 operation = tokenStack.Pop();
             }
         }
-        
+
         private void CalculateLastOperation(Stack<Expression> outputStack, Stack<Token> tokenStack)
         {
             while (tokenStack.Count > 0)

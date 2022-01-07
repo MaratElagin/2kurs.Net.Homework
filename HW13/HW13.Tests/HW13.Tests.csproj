@@ -23,7 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\HW11\HW11\HW11.csproj" />
+      <ProjectReference Include="..\..\HW10\HW10\HW10.csproj" />
       <ProjectReference Include="..\HW13\HW13.csproj" />
     </ItemGroup>
 

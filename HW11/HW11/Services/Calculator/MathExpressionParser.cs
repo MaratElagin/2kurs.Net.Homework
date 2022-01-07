@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using HW11.Exceptions;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace HW11.Services.Calculator
@@ -10,10 +8,10 @@ namespace HW11.Services.Calculator
         private readonly char[] _brackets = {'(', ')'};
         private readonly char[] _operations = {'+', '-', '/', '*'};
 
-        public List<Token> ParseToTokens(string expression)
+        public CalculationAnswer<List<Token>, string> ParseToTokens(string expression)
         {
             if (string.IsNullOrEmpty(expression))
-                return new List<Token>();
+                return new CalculationAnswer<List<Token>, string>(new List<Token>());
             var tokens = new List<Token>();
             var number = "";
             string numberErrorMessage = "There is no such number";
@@ -22,25 +20,25 @@ namespace HW11.Services.Calculator
                 if (_brackets.Contains(c))
                 {
                     if (!TryAddToken(ref number, tokens, c, TokenType.Bracket))
-                        throw new InvalidNumberException(numberErrorMessage + number);
+                        return new CalculationAnswer<List<Token>, string>(numberErrorMessage + number);
                 }
                 else if (_operations.Contains(c))
                 {
                     if (!TryAddToken(ref number, tokens, c, TokenType.Operation))
-                        throw new InvalidNumberException(numberErrorMessage + number);
+                        return new CalculationAnswer<List<Token>, string>(numberErrorMessage + number);
                 }
                 else if (char.IsDigit(c) || c == ',' && !number.Contains(','))
                     number += c;
                 else
-                    throw new InvalidCharacterException($"Unknown character {c}");
+                    return new CalculationAnswer<List<Token>, string>($"Unknown character {c}");
             }
 
             if (!string.IsNullOrEmpty(number))
                 if (!double.TryParse(number, out _))
-                    throw new ArgumentException(numberErrorMessage + number);
+                    return new CalculationAnswer<List<Token>, string>(numberErrorMessage + number);
                 else
                     tokens.Add(new Token(TokenType.Number, number));
-            return tokens;
+            return new CalculationAnswer<List<Token>, string>(tokens);
         }
 
         private bool TryAddToken(ref string number, ICollection<Token> tokens, char tokenValue, TokenType tokenType)
