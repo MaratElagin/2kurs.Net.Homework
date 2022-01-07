@@ -1,9 +1,7 @@
 using HW10.Services.Calculator;
 using HW10.Services.CashedCalculator;
-using HW10.Services.Database;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -22,11 +20,8 @@ namespace HW10
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationContext>(options =>
-                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddScoped<ICalculator>(s =>
-                new CashedCalculator(new Calculator(), s.GetService<ApplicationContext>()));
             services.AddControllersWithViews();
+            services.AddScoped<ICalculator>(c => new CashedCalculator(new Calculator()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

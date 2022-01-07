@@ -1,0 +1,20 @@
+﻿@model AnswerModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<style>
+input[name="expression"], #calculate{
+background-color: #7abaff;
+border: 1px solid greenyellow;
+}
+</style>
+<form method="post" asp-action="Calculate">
+    <input type="text" placeholder="Введите выражение" name = "expression" autofocus/>
+    <button id ="calculate">Вычислить</button>
+</form>
+<span id="response" class="mt-3">@Model?.Answer</span>
+
+
