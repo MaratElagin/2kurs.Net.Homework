@@ -1,22 +1,22 @@
-﻿using System.Collections.Generic;
-using HW11.Services.Calculator;
+﻿using System.Collections.Concurrent;
+using HW10.Services.Calculator;
 
-namespace HW11.Services.CashedCalculator
+namespace HW10.Services.CashedCalculator
 {
-    public class CashedCalculator:ICalculator
+    public class CashedCalculator : ICalculator
     {
         private readonly ICalculator _calculator;
-        private static readonly Dictionary<string, string> CashedExpression = new();
+        private static readonly ConcurrentDictionary<string, string> CashedExpression = new();
 
         public CashedCalculator(ICalculator calculator)
         {
             _calculator = calculator;
         }
-        
+
         public CalculationAnswer<string, string> Calculate(string expression)
         {
             var expressionWithoutSpace = expression?.Replace(" ", "");
-            if(expressionWithoutSpace is not null && CashedExpression.ContainsKey(expressionWithoutSpace!))
+            if (expressionWithoutSpace is not null && CashedExpression.ContainsKey(expressionWithoutSpace!))
                 return new CalculationAnswer<string, string>(success: CashedExpression[expressionWithoutSpace]);
 
             var result = _calculator.Calculate(expression);

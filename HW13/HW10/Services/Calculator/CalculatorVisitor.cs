@@ -2,9 +2,9 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace HW11.Services.Calculator
+namespace HW10.Services.Calculator
 {
-    public class CalculatorVisitor : ExpressionVisitor
+    public class CalculatorVisitor :ExpressionVisitor
     {
         protected override Expression VisitBinary(BinaryExpression node)
         {

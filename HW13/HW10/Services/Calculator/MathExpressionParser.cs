@@ -1,12 +1,11 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
-namespace HW11.Services.Calculator
+namespace HW10.Services.Calculator
 {
     public class MathExpressionParser
     {
-        private readonly char[] _brackets = {'(', ')'};
-        private readonly char[] _operations = {'+', '-', '/', '*'};
+        private readonly HashSet<char> brackets = new HashSet<char>(){'(', ')'};
+        private readonly HashSet<char> operations = new HashSet<char>(){'+', '-', '*', '/'};
 
         public CalculationAnswer<List<Token>, string> ParseToTokens(string expression)
         {
@@ -14,15 +13,15 @@ namespace HW11.Services.Calculator
                 return new CalculationAnswer<List<Token>, string>(new List<Token>());
             var tokens = new List<Token>();
             var number = "";
-            string numberErrorMessage = "There is no such number";
+            string numberErrorMessage = "";
             foreach (var c in expression.Replace(" ", ""))
             {
-                if (_brackets.Contains(c))
+                if (brackets.Contains(c))
                 {
                     if (!TryAddToken(ref number, tokens, c, TokenType.Bracket))
                         return new CalculationAnswer<List<Token>, string>(numberErrorMessage + number);
                 }
-                else if (_operations.Contains(c))
+                else if (operations.Contains(c))
                 {
                     if (!TryAddToken(ref number, tokens, c, TokenType.Operation))
                         return new CalculationAnswer<List<Token>, string>(numberErrorMessage + number);
@@ -36,7 +35,7 @@ namespace HW11.Services.Calculator
             if (!string.IsNullOrEmpty(number))
                 if (!double.TryParse(number, out _))
                     return new CalculationAnswer<List<Token>, string>(numberErrorMessage + number);
-                else
+                else 
                     tokens.Add(new Token(TokenType.Number, number));
             return new CalculationAnswer<List<Token>, string>(tokens);
         }

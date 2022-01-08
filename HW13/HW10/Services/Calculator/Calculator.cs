@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Linq.Expressions;
 
-namespace HW11.Services.Calculator
+namespace HW10.Services.Calculator
 {
     public class Calculator : ICalculator
     {
@@ -70,7 +70,7 @@ namespace HW11.Services.Calculator
 
                 lastToken = currentToken;
             }
-
+                               
             CalculateLastOperation(outputStack, tokenStack);
             return outputStack.Pop();
         }
@@ -84,7 +84,7 @@ namespace HW11.Services.Calculator
                 operation = tokenStack.Pop();
             }
         }
-
+        
         private void CalculateLastOperation(Stack<Expression> outputStack, Stack<Token> tokenStack)
         {
             while (tokenStack.Count > 0)

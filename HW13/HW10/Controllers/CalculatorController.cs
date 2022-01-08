@@ -1,8 +1,8 @@
-﻿using HW11.Models;
-using HW11.Services.Calculator;
+﻿using HW10.Models;
+using HW10.Services.Calculator;
 using Microsoft.AspNetCore.Mvc;
 
-namespace HW11.Controllers
+namespace HW10.Controllers
 {
     public class CalculatorController : Controller
     {
@@ -22,11 +22,12 @@ namespace HW11.Controllers
         [HttpPost]
         public IActionResult Calculate(string expression)
         {
-            AnswerModel model;
             var result = _calculator.Calculate(expression);
-            if (result.Type is TypeAnswer.Error)
+            AnswerModel model;
+            if (result.Type is TypeAnswer.Success)
+                model = new AnswerModel($"Result: {result.Success}");
+            else
                 model = new AnswerModel($"Error: {result.Error}");
-            else model = new AnswerModel($"Result: {result.Success}");
             return View(model);
         }
     }

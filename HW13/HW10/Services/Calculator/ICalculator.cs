@@ -1,4 +1,4 @@
-﻿namespace HW11.Services.Calculator
+﻿namespace HW10.Services.Calculator
 {
     public interface ICalculator
     {

@@ -1,12 +1,12 @@
-using HW11.Services.Calculator;
-using HW11.Services.CashedCalculator;
+using HW10.Services.Calculator;
+using HW10.Services.CashedCalculator;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace HW11
+namespace HW10
 {
     public class Startup
     {
@@ -27,16 +27,8 @@ namespace HW11
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
+            app.UseDeveloperExceptionPage();
+
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
