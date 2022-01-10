@@ -1,0 +1,195 @@
+﻿@page
+@using UI.Models.Game
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    var isActive = Model.UserCharacter is null
+                   || Model.FightResult is not null && Model.FightResult.IsUserWin;
+    var res = isActive ? "" : "disabled=\"disabled\"";
+}
+
+<h2>Характеристики вашего персонажа</h2>
+<p>Для начала игры заполните следующие поля:</p>
+
+<div>
+    <form method="post" role="form">
+        <div class="form-row justify-content-between">
+            <div class="col-md-4">
+                <label asp-for="UserCharacter.Name" class="control-label">User name:</label>
+                <input type="text" asp-for="UserCharacter.Name" class="form-control"/>
+                <span class="text-danger" asp-validation-for="UserCharacter.Name"></span>
+            </div>
+
+            <div class="col-md-4">
+                <label asp-for="UserCharacter.HitPoints" class="control-label">Hit points:</label>
+                <input type="text" asp-for="UserCharacter.HitPoints" class="form-control"/>
+                <span class="text-danger" asp-validation-for="UserCharacter.HitPoints"></span>
+            </div>
+        </div>
+
+        <div class="form-row justify-content-between">
+            <div class="col-md-4">
+                <label asp-for="UserCharacter.AttackModifier" class="control-label">Attack modifier:</label>
+                <input type="text" asp-for="UserCharacter.AttackModifier" class="form-control"/>
+                <span class="text-danger" asp-validation-for="UserCharacter.AttackModifier"></span>
+            </div>
+
+            <div class="col-md-4">
+                <label asp-for="UserCharacter.AttackPerRound" class="control-label">Attack per round:</label>
+                <input type="text" asp-for="UserCharacter.AttackPerRound" class="form-control"/>
+                <span class="text-danger" asp-validation-for="UserCharacter.AttackPerRound"></span>
+            </div>
+        </div>
+        <div class="form-row justify-content-between">
+            <div class="col-md-4">
+                <label asp-for="UserCharacter.Damage" class="control-label">Damage:</label>
+                <input type="text" asp-for="UserCharacter.Damage" class="form-control"/>
+                <span class="text-danger" asp-validation-for="UserCharacter.Damage"></span>
+            </div>
+
+            <div class="col-md-4">
+                <label asp-for="UserCharacter.DamageModifier" class="control-label">Damage modifier:</label>
+                <input type="text" asp-for="UserCharacter.DamageModifier" class="form-control"/>
+                <span class="text-danger" asp-validation-for="UserCharacter.DamageModifier"></span>
+            </div>
+        </div>
+        <div class="form-row justify-content-between">
+            <div class="col-md-4">
+                <label asp-for="UserCharacter.ArmorClass" class="control-label">Armor class:</label>
+                <input type="text" asp-for="UserCharacter.ArmorClass" class="form-control"/>
+                <span class="text-danger" asp-validation-for="UserCharacter.ArmorClass"></span>
+            </div>
+        </div>
+
+        <div class="form-row mt-3 justify-content-center">
+            <div class="col-md-4">
+                <input type="submit" class="btn btn-primary w-100" value="Играть!"/>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div>
+    @if (Model.FightResult is not null)
+    {
+        var fightResult = Model.FightResult;
+        <div class="col-6">
+            @foreach (var activity in fightResult.Activities)
+            {
+                @(activity.IsUserActivity ? "Ваш ход" : "Ход монстра")
+                @foreach (var attack in activity.Attacks)
+                {
+                    if (activity.IsUserActivity)
+                    {
+                        fightResult.Monster.HitPoints -= attack.Damage;
+                    }
+                    else
+                    {
+                        fightResult.UserCharacter.HitPoints -= attack.Damage;
+                    }
+
+                    if (fightResult.UserCharacter.HitPoints < 0) fightResult.UserCharacter.HitPoints = 0;
+                    if (fightResult.Monster.HitPoints < 0) fightResult.Monster.HitPoints = 0;
+                    var hp = !activity.IsUserActivity ? fightResult.UserCharacter.HitPoints : fightResult.Monster.HitPoints;
+                    if (attack.Dice >= 1)
+                    {
+                        <p>
+                            @(activity.IsUserActivity ?
+                                "Ваш кубик" : "Кубик монстра") @attack.Dice
+                        </p>
+                    }
+
+                    if (attack.IsCriticalDamage)
+                    {
+                        <p>Критический удар: 2 * (@attack.Damage/2) (@hp)</p>
+                    }
+
+                    else if (attack.IsCriticalMiss)
+                    {
+                        <p>Промах</p>
+                    }
+
+                    else
+                    {
+                        <p>Урон: @attack.Damage</p>
+                    }
+                }
+            }
+            <div>
+                @if (fightResult.IsUserWin)
+                {
+                    <h3>Вы победили!</h3>
+                }
+                else
+                {
+                    <h3>Вы проиграли!</h3>
+                }
+            </div>
+        </div>
+    }
+</div>
+
+@{
+    var monster = Model.Monster;
+    var userCharacter = Model.UserCharacter;
+}
+
+@if (userCharacter is not null && monster is not null)
+{
+    <div class="d-flex justify-content-center">
+        <div class="d-flex flex-md-row flex-column">
+            <div class="mr-0 mr-md-5 mb-3 mb-md-0">
+                <h5 class="text-success">Ваш персонаж</h5>
+                <div>
+                    <label asp-for="@userCharacter.Name"></label>: @userCharacter.Name
+                </div>
+                <div>
+                    <label asp-for="@userCharacter.Damage"></label>: @userCharacter.Damage
+                </div>
+
+                <div>
+                    <label asp-for="@userCharacter.ArmorClass"></label>: @userCharacter.ArmorClass
+                </div>
+                <div>
+                    <label asp-for="@userCharacter.AttackModifier"></label>: @userCharacter.AttackModifier
+                </div>
+                <div>
+                    <label asp-for="@userCharacter.DamageModifier"></label>: @userCharacter.DamageModifier
+                </div>
+                <div>
+                    <label asp-for="@userCharacter.HitPoints"></label>: @userCharacter.HitPoints
+                </div>
+                <div>
+                    <label asp-for="@userCharacter.AttackPerRound"></label>: @userCharacter.AttackPerRound
+                </div>
+            </div>
+
+            <div>
+                <h5 class="text-danger">Ваш противник</h5>
+
+                <div>
+                    <label asp-for="Monster.Name"></label>: @monster.Name
+                </div>
+                <div>
+                    <label asp-for="Monster.Damage"></label>: @monster.Damage
+                </div>
+
+                <div>
+                    <label asp-for="Monster.ArmorClass"></label>: @monster.ArmorClass
+                </div>
+                <div>
+                    <label asp-for="Monster.AttackModifier"></label>: @monster.AttackModifier
+                </div>
+                <div>
+                    <label asp-for="Monster.DamageModifier"></label>: @monster.DamageModifier
+                </div>
+                <div>
+                    <label asp-for="Monster.HitPoints"></label>: @monster.HitPoints
+                </div>
+                <div>
+                    <label asp-for="Monster.AttackPerRound"></label>: @monster.AttackPerRound
+                </div>
+            </div>
+        </div>
+    </div>
+}
