@@ -2,6 +2,6 @@
 {
     public interface ICalculator
     {
-        public string Calculate(string expression);
+        public CalculationAnswer<string, string> Calculate(string expression);
     }
 }

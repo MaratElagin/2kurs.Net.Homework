@@ -4,18 +4,12 @@ using System.Threading.Tasks;
 
 namespace HW11.Services.Calculator
 {
-    public class CalculatorVisitor
+    public class CalculatorVisitor : ExpressionVisitor
     {
-        public double VisitDynamic(Expression expression)
+        protected override Expression VisitBinary(BinaryExpression node)
         {
-            var node = Visit((dynamic) expression);
-            return (double) ((ConstantExpression) node).Value;
-        }
-
-        private Expression Visit(BinaryExpression node)
-        {
-            var leftNodeTask = Task.Run(() => VisitDynamic(node.Left));
-            var rightNodeTask = Task.Run(() => VisitDynamic(node.Right));
+            var leftNodeTask = Task.Run(()=>(double)((ConstantExpression)Visit(node.Left)).Value);
+            var rightNodeTask = Task.Run(()=>(double)((ConstantExpression)Visit(node.Right)).Value);
             Thread.Sleep(1000);
             Task.WhenAll(leftNodeTask, rightNodeTask);
             var leftNode = leftNodeTask.Result;
@@ -30,6 +24,6 @@ namespace HW11.Services.Calculator
             };
         }
 
-        private Expression Visit(ConstantExpression node) => node;
+        protected override Expression VisitConstant(ConstantExpression node) => node;
     }
 }

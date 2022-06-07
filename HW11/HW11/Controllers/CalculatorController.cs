@@ -1,6 +1,4 @@
-﻿using System;
-using HW11.Exceptions;
-using HW11.Models;
+﻿using HW11.Models;
 using HW11.Services.Calculator;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,14 +7,12 @@ namespace HW11.Controllers
     public class CalculatorController : Controller
     {
         private readonly ICalculator _calculator;
-        private readonly IExceptionHandler _exceptionHandler;
 
-        public CalculatorController(ICalculator calculator, IExceptionHandler exceptionHandler)
+        public CalculatorController(ICalculator calculator)
         {
             _calculator = calculator;
-            _exceptionHandler = exceptionHandler;
         }
-        
+
         [HttpGet]
         public IActionResult Calculate()
         {
@@ -27,16 +23,10 @@ namespace HW11.Controllers
         public IActionResult Calculate(string expression)
         {
             AnswerModel model;
-            try
-            {
-                var result = _calculator.Calculate(expression);
-                model = new AnswerModel($"Result: {result}");
-            }
-            catch (Exception e)
-            {
-                _exceptionHandler.HandleException(e);
-                model = new AnswerModel($"Error: {e.Message}");
-            }
+            var result = _calculator.Calculate(expression);
+            if (result.Type is TypeAnswer.Error)
+                model = new AnswerModel($"Error: {result.Error}");
+            else model = new AnswerModel($"Result: {result.Success}");
             return View(model);
         }
     }

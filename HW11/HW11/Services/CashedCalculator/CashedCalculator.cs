@@ -1,38 +1,29 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
 using HW11.Services.Calculator;
-using HW11.Services.Database;
-using HW11.Services.Database.Models;
 
 namespace HW11.Services.CashedCalculator
 {
     public class CashedCalculator:ICalculator
     {
         private readonly ICalculator _calculator;
-        private readonly ApplicationContext _cashedExpression;
+        private static readonly Dictionary<string, string> CashedExpression = new();
 
-        public CashedCalculator(ICalculator calculator, ApplicationContext cashedExpression)
+        public CashedCalculator(ICalculator calculator)
         {
             _calculator = calculator;
-            _cashedExpression = cashedExpression;
         }
-
-        public string Calculate(string expression)
+        
+        public CalculationAnswer<string, string> Calculate(string expression)
         {
             var expressionWithoutSpace = expression?.Replace(" ", "");
-            var possibleResult = _cashedExpression.CalculatingExpressions
-                .FirstOrDefault(exp => exp.Expression == expressionWithoutSpace)?.Result;
-            if (possibleResult is not null)
-                return possibleResult;
+            if(expressionWithoutSpace is not null && CashedExpression.ContainsKey(expressionWithoutSpace!))
+                return new CalculationAnswer<string, string>(success: CashedExpression[expressionWithoutSpace]);
 
             var result = _calculator.Calculate(expression);
+            if (result.Type == TypeAnswer.Error)
+                return result;
 
-            var calculatingExpression = new CalculatingExpression
-            {
-                Expression = expressionWithoutSpace,
-                Result = result
-            };
-            _cashedExpression.Add(calculatingExpression);
-            _cashedExpression.SaveChanges();
+            CashedExpression[expressionWithoutSpace] = result.Success;
             return result;
         }
     }
