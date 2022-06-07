@@ -1,0 +1,30 @@
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #E01A76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.btn-send{
+  height: 50px;
+  border-radius: 10px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.btn-send:hover{
+  box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+}
+
+.my_text_input{
+  padding: 0 8px 0 8px;
+  height: 38px;
+}
